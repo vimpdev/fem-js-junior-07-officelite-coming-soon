@@ -5,13 +5,133 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+
+		<title>Officelite coming soon site | Frontend Mentor</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header class="site-header">
+			<a href="/">
+				<img src="/images/logos/logo.svg" alt="Officelite" />
+			</a>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="hero__inner container">
+					<div class="hero__content">
+						<h1 class="hero__title">
+							A simple solution to complex tasks is coming soon
+						</h1>
+						<p class="hero__description">
+							Say goodbye to inefficient juggling of multiple apps, teams, and
+							projects. Officelite is the new collaboration platform built with
+							an intuitive interface to improve productivity.
+						</p>
+						<a class="button" href="/sign-up">Get Started</a>
+					</div>
+
+					<div class="hero__media">
+						<img src="/images/illustrations/charts.svg" alt="" />
+					</div>
+				</div>
+			</section>
+
+			<section class="pricing">
+				<h2 class="visually-hidden">Pricing plans</h2>
+
+				<ul class="pricing__list">
+					<li class="pricing-card">
+						<h3 class="pricing-card__name">Basic</h3>
+						<p class="pricing-card__price">Free</p>
+						<p class="pricing-card__description">Up to 5 users for free</p>
+
+						<ul class="pricing-card__features">
+							<li class="pricing-card__feature">
+								Basic document collaboration
+							</li>
+							<li class="pricing-card__feature">2 GB storage</li>
+							<li class="pricing-card__feature">Great security and support</li>
+						</ul>
+
+						<a class="pricing-card__cta" href="/sign-up">Try for Free</a>
+					</li>
+
+					<li class="pricing-card">
+						<h3 class="pricing-card__name">Pro</h3>
+						<p class="pricing-card__price">$9.99</p>
+						<p class="pricing-card__description">Per user, billed monthly</p>
+
+						<ul class="pricing-card__features">
+							<li class="pricing-card__feature">All essential integrations</li>
+							<li class="pricing-card__feature">50 GB storage</li>
+							<li class="pricing-card__feature">More control and insights</li>
+						</ul>
+
+						<a class="pricing-card__cta" href="/sign-up">Try for Free</a>
+					</li>
+
+					<li class="pricing-card">
+						<h3 class="pricing-card__name">Ultimate</h3>
+						<p class="pricing-card__price">$19.99</p>
+						<p class="pricing-card__description">Per user, billed monthly</p>
+
+						<ul class="pricing-card__features">
+							<li class="pricing-card__feature">Robust work management</li>
+							<li class="pricing-card__feature">100 GB storage</li>
+							<li class="pricing-card__feature">VIP support</li>
+						</ul>
+
+						<a class="pricing-card__cta" href="/sign-up">Try for Free</a>
+					</li>
+				</ul>
+			</section>
+
+			<section class="countdown">
+				<div class="countdown__inner container">
+					<h2 class="countdown__title">
+						Coming <time datetime="2020-11-04" class="countdown__date"
+							>4 Nov 2020</time
+						>
+					</h2>
+
+					<ul class="countdown__timer">
+						<li class="countdown__item">
+							<span class="countdown__value">47</span>
+							<span class="countdown__label">days</span>
+						</li>
+						<li class="countdown__item">
+							<span class="countdown__value">07</span>
+							<span class="countdown__label">hours</span>
+						</li>
+						<li class="countdown__item">
+							<span class="countdown__value">56</span>
+							<span class="countdown__label">min</span>
+						</li>
+						<li class="countdown__item">
+							<span class="countdown__value">14</span>
+							<span class="countdown__label">sec</span>
+						</li>
+					</ul>
+
+					<a class="button" href="/sign-up">Get Started</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<small
+				>Challenge by <a
+					href="https://www.frontendmentor.io/challenges"
+					target="_blank"
+					rel="noopener noreferrer">Frontend Mentor</a
+				> &ndash; Coded by <a
+					href="https://www.frontendmentor.io/profile/vimpdev"
+					target="_blank"
+					rel="noopener noreferrer">VIMP</a
+				></small
+			>
+		</footer>
 	</body>
 </html>
