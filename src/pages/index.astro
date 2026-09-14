@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PricingCard from "../components/PricingCard.astro";
 ---
 
 <html lang="en">
@@ -38,49 +39,38 @@ import Header from "../components/Header.astro";
 				<h2 class="visually-hidden">Pricing plans</h2>
 
 				<ul class="pricing__list">
-					<li class="pricing-card">
-						<h3 class="pricing-card__name">Basic</h3>
-						<p class="pricing-card__price">Free</p>
-						<p class="pricing-card__description">Up to 5 users for free</p>
+					<PricingCard
+						name="Basic"
+						price="Free"
+						description="Up to 5 users for free"
+						features={[
+							"Basic document collaboration",
+							"2 GB storage",
+							"Great security and support",
+						]}
+					/>
 
-						<ul class="pricing-card__features">
-							<li class="pricing-card__feature">
-								Basic document collaboration
-							</li>
-							<li class="pricing-card__feature">2 GB storage</li>
-							<li class="pricing-card__feature">Great security and support</li>
-						</ul>
+					<PricingCard
+						name="Pro"
+						price="$9.99"
+						description="Per user, billed monthly"
+						features={[
+							"All essential integrations",
+							"50 GB storage",
+							"More control and insights",
+						]}
+					/>
 
-						<a class="pricing-card__cta" href="/sign-up">Try for Free</a>
-					</li>
-
-					<li class="pricing-card">
-						<h3 class="pricing-card__name">Pro</h3>
-						<p class="pricing-card__price">$9.99</p>
-						<p class="pricing-card__description">Per user, billed monthly</p>
-
-						<ul class="pricing-card__features">
-							<li class="pricing-card__feature">All essential integrations</li>
-							<li class="pricing-card__feature">50 GB storage</li>
-							<li class="pricing-card__feature">More control and insights</li>
-						</ul>
-
-						<a class="pricing-card__cta" href="/sign-up">Try for Free</a>
-					</li>
-
-					<li class="pricing-card">
-						<h3 class="pricing-card__name">Ultimate</h3>
-						<p class="pricing-card__price">$19.99</p>
-						<p class="pricing-card__description">Per user, billed monthly</p>
-
-						<ul class="pricing-card__features">
-							<li class="pricing-card__feature">Robust work management</li>
-							<li class="pricing-card__feature">100 GB storage</li>
-							<li class="pricing-card__feature">VIP support</li>
-						</ul>
-
-						<a class="pricing-card__cta" href="/sign-up">Try for Free</a>
-					</li>
+					<PricingCard
+						name="Ultimate"
+						price="$19.99"
+						description="Per user, billed monthly"
+						features={[
+							"Robust work management",
+							"100 GB storage",
+							"VIP support",
+						]}
+					/>
 				</ul>
 			</section>
 

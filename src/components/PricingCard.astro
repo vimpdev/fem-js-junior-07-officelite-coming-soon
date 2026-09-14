@@ -1,0 +1,19 @@
+---
+const { name, price, description, features } = Astro.props;
+---
+
+<li class="pricing-card">
+  <h3 class="pricing-card__name">{name}</h3>
+  <p class="pricing-card__price">{price}</p>
+  <p class="pricing-card__description">{description}</p>
+
+  <ul class="pricing-card__features">
+    {
+      features.map((feature) => (
+        <li class="pricing-card__feature">{feature}</li>
+      ))
+    }
+  </ul>
+
+  <a href="/sign-up" class="pricing-card__cta">Try for Free</a>
+</li>
