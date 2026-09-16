@@ -6,20 +6,66 @@
 
   <ul class="countdown__timer">
     <li class="countdown__item">
-      <span class="countdown__value">47</span>
+      <span class="countdown__value" data-days>47</span>
       <span class="countdown__label">days</span>
     </li>
     <li class="countdown__item">
-      <span class="countdown__value">07</span>
+      <span class="countdown__value" data-hours>07</span>
       <span class="countdown__label">hours</span>
     </li>
     <li class="countdown__item">
-      <span class="countdown__value">56</span>
+      <span class="countdown__value" data-minutes>56</span>
       <span class="countdown__label">min</span>
     </li>
     <li class="countdown__item">
-      <span class="countdown__value">14</span>
+      <span class="countdown__value" data-seconds>14</span>
       <span class="countdown__label">sec</span>
     </li>
   </ul>
 </div>
+
+<script>
+  const daysElement = document.querySelector("[data-days]");
+  const hoursElement = document.querySelector("[data-hours]");
+  const minutesElement = document.querySelector("[data-minutes]");
+  const secondsElement = document.querySelector("[data-seconds]");
+
+  const targetDate = new Date("2026-09-15T00:00:00");
+
+  let countdownInterval;
+
+  function updateCountdown() {
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+
+    if (difference <= 0) {
+      daysElement.textContent = "00";
+      hoursElement.textContent = "00";
+      minutesElement.textContent = "00";
+      secondsElement.textContent = "00";
+
+      clearInterval(countdownInterval);
+      return;
+    }
+
+    const days = Math.floor(difference / 86400000);
+    const remainingAfterDays = difference % 86400000;
+
+    const hours = Math.floor(remainingAfterDays / 3600000);
+    const remainingAfterHours = remainingAfterDays % 3600000;
+
+    const minutes = Math.floor(remainingAfterHours / 60000);
+    const remainingAfterMinutes = remainingAfterHours % 60000;
+
+    const seconds = Math.floor(remainingAfterMinutes / 1000);
+
+    daysElement.textContent = String(days).padStart(2, "0");
+    hoursElement.textContent = String(hours).padStart(2, "0");
+    minutesElement.textContent = String(minutes).padStart(2, "0");
+    secondsElement.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+
+  countdownInterval = setInterval(updateCountdown, 1000);
+</script>
