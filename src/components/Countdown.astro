@@ -1,7 +1,9 @@
 <div class="countdown">
   <h2 class="countdown__title">
     Coming
-    <time datetime="2020-11-04" class="countdown__date">4 Nov 2020</time>
+    <time datetime="2020-11-04" class="countdown__date" data-date
+      >4 Nov 2020</time
+    >
   </h2>
 
   <ul class="countdown__timer">
@@ -29,8 +31,23 @@
   const hoursElement = document.querySelector("[data-hours]");
   const minutesElement = document.querySelector("[data-minutes]");
   const secondsElement = document.querySelector("[data-seconds]");
+  const dateElement = document.querySelector("[data-date]");
 
-  const targetDate = new Date("2026-09-15T00:00:00");
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 30);
+
+  dateElement.textContent = targetDate.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+  const year = targetDate.getFullYear();
+  const month = String(targetDate.getMonth() + 1).padStart(2, "0");
+  const day = String(targetDate.getDate()).padStart(2, "0");
+
+  const isoDate = `${year}-${month}-${day}`;
+  dateElement.dateTime = isoDate;
 
   let countdownInterval;
 
