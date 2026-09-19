@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Countdown from "../components/Countdown.astro";
+import SignupForm from "../components/SignupForm.astro";
 ---
 
 <html lang="en">
@@ -32,57 +33,7 @@ import Countdown from "../components/Countdown.astro";
         </div>
       </section>
 
-      <form class="signup-form">
-        <div class="signup-form__group">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            autocomplete="name"
-            required
-          />
-        </div>
-        <div class="signup-form__group">
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            autocomplete="email"
-            required
-          />
-        </div>
-        <div class="signup-form__group">
-          <label for="plan">Basic Pack</label>
-          <select name="plan" id="plan" required>
-            <option value="free">Free</option>
-            <option value="pro">$9.99</option>
-            <option value="ultimate">$19.99</option>
-          </select>
-        </div>
-        <div class="signup-form__group">
-          <label for="phone">Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            autocomplete="tel"
-            required
-          />
-        </div>
-        <div class="signup-form__group">
-          <label for="company">Company</label>
-          <input
-            type="text"
-            name="company"
-            id="company"
-            autocomplete="organization"
-          />
-        </div>
-
-        <button type="submit">Get on the list</button>
-      </form>
+      <SignupForm/>
     </main>
 
     <footer class="site-footer">

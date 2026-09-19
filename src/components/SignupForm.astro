@@ -1,0 +1,51 @@
+<form class="signup-form">
+  <div class="signup-form__group">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" autocomplete="name" required />
+  </div>
+  <div class="signup-form__group">
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email" autocomplete="email" required />
+  </div>
+  <div class="signup-form__group">
+    <label for="plan">Basic Pack</label>
+    <select name="plan" id="plan" required>
+      <option value="free">Free</option>
+      <option value="pro">$9.99</option>
+      <option value="ultimate">$19.99</option>
+    </select>
+  </div>
+  <div class="signup-form__group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" autocomplete="tel" required />
+  </div>
+  <div class="signup-form__group">
+    <label for="company">Company</label>
+    <input
+      type="text"
+      name="company"
+      id="company"
+      autocomplete="organization"
+    />
+  </div>
+
+  <button type="submit">Get on the list</button>
+</form>
+
+<script>
+  const formElement = document.querySelector(".signup-form");
+  const planElement = formElement.querySelector("#plan");
+  const planLabelElement = formElement.querySelector('label[for="plan"]');
+
+  const planLabels = {
+    free: "Basic Pack",
+    pro: "Pro Pack",
+    ultimate: "Ultimate Pack",
+  };
+
+  planElement.addEventListener("change", () => {
+    const selectedPlan = planElement.value;
+
+    planLabelElement.textContent = planLabels[selectedPlan];
+  });
+</script>
