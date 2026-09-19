@@ -1,0 +1,102 @@
+---
+import Header from "../components/Header.astro";
+import Countdown from "../components/Countdown.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Officelite coming soon site | Frontend Mentor</title>
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <section class="hero">
+        <div class="hero__inner container">
+          <div class="hero__content">
+            <h1 class="hero__title">Work smarter. Save time.</h1>
+            <p class="hero__description">
+              Easily manage your projects. Get on the list and receive in-app
+              perks available only to early subscribers. We are moving into
+              final development and getting ready for official launch soon.
+            </p>
+          </div>
+
+          <div class="hero__countdown">
+            <Countdown />
+          </div>
+        </div>
+      </section>
+
+      <form class="signup-form">
+        <div class="signup-form__group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            autocomplete="name"
+            required
+          />
+        </div>
+        <div class="signup-form__group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            required
+          />
+        </div>
+        <div class="signup-form__group">
+          <label for="plan">Basic Pack</label>
+          <select name="plan" id="plan" required>
+            <option value="free">Free</option>
+            <option value="pro">$9.99</option>
+            <option value="ultimate">$19.99</option>
+          </select>
+        </div>
+        <div class="signup-form__group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            autocomplete="tel"
+            required
+          />
+        </div>
+        <div class="signup-form__group">
+          <label for="company">Company</label>
+          <input
+            type="text"
+            name="company"
+            id="company"
+            autocomplete="organization"
+          />
+        </div>
+
+        <button type="submit">Get on the list</button>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <small
+        >Challenge by <a
+          href="https://www.frontendmentor.io/challenges"
+          target="_blank"
+          rel="noopener noreferrer">Frontend Mentor</a
+        > &ndash; Coded by <a
+          href="https://www.frontendmentor.io/profile/vimpdev"
+          target="_blank"
+          rel="noopener noreferrer">VIMP</a
+        ></small
+      >
+    </footer>
+  </body>
+</html>
