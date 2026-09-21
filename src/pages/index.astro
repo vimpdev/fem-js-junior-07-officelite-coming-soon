@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Button from "../components/Button.astro";
 import PricingCard from "../components/PricingCard.astro";
 import Countdown from "../components/Countdown.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const plans = [
 	{
@@ -34,68 +35,59 @@ const plans = [
 ];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
+<BaseLayout>
+	<Header />
 
-		<title>Officelite coming soon site | Frontend Mentor</title>
-	</head>
-	<body>
-		<Header />
-
-		<main>
-			<section class="hero">
-				<div class="hero__inner container">
-					<div class="hero__content">
-						<h1 class="hero__title">
-							A simple solution to complex tasks is coming soon
-						</h1>
-						<p class="hero__description">
-							Say goodbye to inefficient juggling of multiple apps, teams, and
-							projects. Officelite is the new collaboration platform built with
-							an intuitive interface to improve productivity.
-						</p>
-
-						<Button href="/sign-up" label="Get Started" />
-					</div>
-
-					<div class="hero__media">
-						<img src="/images/illustrations/charts.svg" alt="" />
-					</div>
-				</div>
-			</section>
-
-			<section class="pricing">
-				<h2 class="visually-hidden">Pricing plans</h2>
-
-				<ul class="pricing__list">
-					{plans.map((plan) => <PricingCard {...plan} />)}
-				</ul>
-			</section>
-
-			<section class="countdown">
-				<div class="countdown__inner container">
-					<Countdown />
+	<main>
+		<section class="hero">
+			<div class="hero__inner container">
+				<div class="hero__content">
+					<h1 class="hero__title">
+						A simple solution to complex tasks is coming soon
+					</h1>
+					<p class="hero__description">
+						Say goodbye to inefficient juggling of multiple apps, teams, and
+						projects. Officelite is the new collaboration platform built with an
+						intuitive interface to improve productivity.
+					</p>
 
 					<Button href="/sign-up" label="Get Started" />
 				</div>
-			</section>
-		</main>
 
-		<footer class="site-footer">
-			<small
-				>Challenge by <a
-					href="https://www.frontendmentor.io/challenges"
-					target="_blank"
-					rel="noopener noreferrer">Frontend Mentor</a
-				> &ndash; Coded by <a
-					href="https://www.frontendmentor.io/profile/vimpdev"
-					target="_blank"
-					rel="noopener noreferrer">VIMP</a
-				></small
-			>
-		</footer>
-	</body>
-</html>
+				<div class="hero__media">
+					<img src="/images/illustrations/charts.svg" alt="" />
+				</div>
+			</div>
+		</section>
+
+		<section class="pricing">
+			<h2 class="visually-hidden">Pricing plans</h2>
+
+			<ul class="pricing__list">
+				{plans.map((plan) => <PricingCard {...plan} />)}
+			</ul>
+		</section>
+
+		<section class="countdown">
+			<div class="countdown__inner container">
+				<Countdown />
+
+				<Button href="/sign-up" label="Get Started" />
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<small
+			>Challenge by <a
+				href="https://www.frontendmentor.io/challenges"
+				target="_blank"
+				rel="noopener noreferrer">Frontend Mentor</a
+			> &ndash; Coded by <a
+				href="https://www.frontendmentor.io/profile/vimpdev"
+				target="_blank"
+				rel="noopener noreferrer">VIMP</a
+			></small
+		>
+	</footer>
+</BaseLayout>

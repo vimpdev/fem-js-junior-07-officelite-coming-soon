@@ -2,52 +2,44 @@
 import Header from "../components/Header.astro";
 import Countdown from "../components/Countdown.astro";
 import SignupForm from "../components/SignupForm.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
+<BaseLayout>
+  <Header />
 
-    <title>Officelite coming soon site | Frontend Mentor</title>
-  </head>
-  <body>
-    <Header />
-
-    <main>
-      <section class="hero">
-        <div class="hero__inner container">
-          <div class="hero__content">
-            <h1 class="hero__title">Work smarter. Save time.</h1>
-            <p class="hero__description">
-              Easily manage your projects. Get on the list and receive in-app
-              perks available only to early subscribers. We are moving into
-              final development and getting ready for official launch soon.
-            </p>
-          </div>
-
-          <div class="hero__countdown">
-            <Countdown />
-          </div>
+  <main>
+    <section class="hero">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <h1 class="hero__title">Work smarter. Save time.</h1>
+          <p class="hero__description">
+            Easily manage your projects. Get on the list and receive in-app
+            perks available only to early subscribers. We are moving into final
+            development and getting ready for official launch soon.
+          </p>
         </div>
-      </section>
 
-      <SignupForm/>
-    </main>
+        <div class="hero__countdown">
+          <Countdown />
+        </div>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <small
-        >Challenge by <a
-          href="https://www.frontendmentor.io/challenges"
-          target="_blank"
-          rel="noopener noreferrer">Frontend Mentor</a
-        > &ndash; Coded by <a
-          href="https://www.frontendmentor.io/profile/vimpdev"
-          target="_blank"
-          rel="noopener noreferrer">VIMP</a
-        ></small
-      >
-    </footer>
-  </body>
-</html>
+    <SignupForm />
+  </main>
+
+  <footer class="site-footer">
+    <small
+      >Challenge by <a
+        href="https://www.frontendmentor.io/challenges"
+        target="_blank"
+        rel="noopener noreferrer">Frontend Mentor</a
+      > &ndash; Coded by <a
+        href="https://www.frontendmentor.io/profile/vimpdev"
+        target="_blank"
+        rel="noopener noreferrer">VIMP</a
+      ></small
+    >
+  </footer>
+</BaseLayout>
