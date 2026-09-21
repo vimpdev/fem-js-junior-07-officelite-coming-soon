@@ -1,0 +1,32 @@
+@import "./reset.css";
+@import "./fonts.css";
+@import "./tokens.css";
+
+
+body {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  background-color: var(--color-surface-page);
+  color: var(--color-text-primary);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    /* Disable animations and transitions for users who prefer reduced motion */
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    /* Enable smooth scrolling when motion is allowed */
+    scroll-behavior: smooth;
+  }
+}

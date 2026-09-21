@@ -1,0 +1,63 @@
+:root {
+  /* Primary Tokens */
+  --color-neutral-900: #25293A;
+  --color-neutral-800: #333950;
+  --color-neutral-500: #747B95;
+  --color-neutral-50: #FAFAFA;
+  --color-neutral-0: #FFFFFF;
+  --color-blue-500: #5175FF;
+  --color-blue-300: #829CFF;
+  --color-blue-100: #E4EAFF;
+  --color-red-400: #F05B5B;
+
+  /* Semantic Tokens */
+  --color-surface-page: var(--color-neutral-50);
+  --color-surface-card: var(--color-neutral-0);
+  --color-surface-accent: var(--color-blue-500);
+  --color-surface-dark: var(--color-neutral-900);
+  --color-surface-accent-subtle: var(--color-blue-100);
+  --color-surface-timer: var(--color-neutral-800);
+
+  --color-text-primary: var(--color-neutral-800);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-tertiary: var(--color-blue-500);
+  --color-text-accent: var(--color-neutral-800);
+  --color-text-inverse: var(--color-neutral-0);
+
+  /* Others Tokens */
+  --space-0: 0;
+  --space-025: 0.125rem;
+  --space-050: 0.25rem;
+  --space-075: 0.375rem;
+  --space-100: 0.5rem;
+  --space-125: 0.625rem;
+  --space-150: 0.75rem;
+  --space-200: 1rem;
+  --space-250: 1.25rem;
+  --space-300: 1.5rem;
+  --space-400: 2rem;
+  --space-500: 2.5rem;
+  --space-600: 3rem;
+  --space-800: 4rem;
+  --space-1000: 5rem;
+  --space-1200: 6rem;
+  --space-1400: 7rem;
+  --space-1600: 8rem;
+  --space-1800: 8.75rem;
+
+  --font-family-base: 'Kumbh Sans', system-ui, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --radius-0: 0;
+  --radius-4: 0.25rem;
+  --radius-6: 0.375rem;
+  --radius-8: 0.5rem;
+  --radius-10: 0.625rem;
+  --radius-12: 0.75rem;
+  --radius-16: 1rem;
+  --radius-20: 1.25rem;
+  --radius-24: 1.5rem;
+  --radius-full: 999rem;
+}
