@@ -1,5 +1,19 @@
 <header class="site-header">
-  <a href="/">
-    <img src="/images/logos/logo.svg" alt="Officelite" />
-  </a>
+  <div class="site-header__inner container">
+    <a href="/" class="logo">
+      <img src="/images/logos/logo.svg" alt="Officelite" />
+    </a>
+  </div>
 </header>
+
+<style>
+  .site-header {
+    padding-block-start: var(--space-500);
+  }
+
+  .logo {
+    display: block;
+    inline-size: max-content;
+    margin-inline: auto;
+  }
+</style>

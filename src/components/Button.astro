@@ -3,3 +3,20 @@ const { href, label } = Astro.props;
 ---
 
 <a href={href} class="button">{label}</a>
+
+<style>
+  .button {
+    inline-size: max-content;
+    margin-inline: auto;
+    padding-inline: 2.68rem;
+    padding-block: 0.76rem;
+    font-size: var(--font-size-100);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.6;
+    background-color: var(--color-surface-accent);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-full);
+    box-shadow: 0 1.5625rem 1.5625rem -0.625rem
+      color-mix(in srgb, #3f5bc2 24.72%, transparent);
+  }
+</style>

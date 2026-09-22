@@ -5,11 +5,19 @@
 
 body {
   font-family: var(--font-family-base);
-  font-size: 1rem;
+  font-size: var(--font-size-100);
   font-weight: var(--font-weight-regular);
   background-color: var(--color-surface-page);
   color: var(--color-text-primary);
 }
+
+.container {
+  --gutter-padding: var(--space-400);
+
+  inline-size: min(calc(100% - var(--gutter-padding)), 43.0625rem);
+  margin-inline: auto;
+}
+
 
 
 @media (prefers-reduced-motion: reduce) {
