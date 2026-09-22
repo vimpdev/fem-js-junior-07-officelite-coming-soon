@@ -11,14 +11,39 @@ body {
   color: var(--color-text-primary);
 }
 
+/* Utilities */
+
 .container {
   --gutter-padding: var(--space-400);
+  --max-width: 43.0625rem;
 
-  inline-size: min(calc(100% - var(--gutter-padding)), 43.0625rem);
+  inline-size: min(calc(100% - var(--gutter-padding)), var(--max-width));
   margin-inline: auto;
+
+  @media (width >=70rem) {
+    --max-width: 69.375rem;
+  }
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-space, 1rem);
+}
+
+/* Motion preferences */
 
 @media (prefers-reduced-motion: reduce) {
 

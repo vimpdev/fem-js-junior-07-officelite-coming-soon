@@ -20,8 +20,8 @@
 
   --color-text-primary: var(--color-neutral-800);
   --color-text-secondary: var(--color-neutral-500);
-  --color-text-tertiary: var(--color-blue-500);
-  --color-text-accent: var(--color-neutral-800);
+  --color-text-tertiary: var(--color-neutral-800);
+  --color-text-accent: var(--color-blue-500);
   --color-text-inverse: var(--color-neutral-0);
 
   /* Others Tokens */

@@ -1,13 +1,16 @@
 ---
-const { name, price, description, features } = Astro.props;
+const { name, price, description, features, featured } = Astro.props;
 ---
 
-<li class="pricing-card">
-  <h3 class="pricing-card__name">{name}</h3>
-  <p class="pricing-card__price">{price}</p>
-  <p class="pricing-card__description">{description}</p>
+<!-- <li class="pricing-card stack"> -->
+<li class:list={["pricing-card", { "pricing-card--featured": featured }]}>
+  <div class="pricing-card__content">
+    <h3 class="pricing-card__name">{name}</h3>
+    <p class="pricing-card__price">{price}</p>
+    <p class="pricing-card__description">{description}</p>
+  </div>
 
-  <ul class="pricing-card__features">
+  <ul class="pricing-card__features stack">
     {
       features.map((feature) => (
         <li class="pricing-card__feature">{feature}</li>
@@ -17,3 +20,150 @@ const { name, price, description, features } = Astro.props;
 
   <a href="/sign-up" class="pricing-card__cta">Try for Free</a>
 </li>
+
+<style>
+  .pricing-card {
+    --bg-card: var(--color-surface-card);
+
+    padding: var(--space-500) var(--space-300);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-600);
+    background-color: var(--bg-card);
+    border-radius: var(--radius-12);
+    box-shadow: 0 3.125rem 3.125rem -1.5625rem
+      color-mix(in srgb, #4b5c9a 24%, transparent);
+    overflow: clip;
+
+    @media (width >= 48rem) {
+      padding: var(--space-600);
+      grid-template-columns: 22.0625rem 1fr;
+      grid-template-areas:
+        "content features"
+        "cta features";
+      row-gap: var(--space-300);
+      column-gap: var(--space-0);
+
+      .pricing-card__content {
+        grid-area: content;
+        text-align: left;
+      }
+
+      .pricing-card__features {
+        grid-area: features;
+        text-align: left;
+        justify-content: center;
+      }
+
+      .pricing-card__cta {
+        grid-area: cta;
+        margin-inline: 0 auto;
+      }
+    }
+
+    @media (width >= 70rem) {
+      grid-template-columns: 1fr;
+      padding: var(--space-500) var(--space-250);
+      grid-template-areas: none;
+      row-gap: var(--space-500);
+
+      .pricing-card__content {
+        grid-area: auto;
+        text-align: center;
+      }
+
+      .pricing-card__features {
+        grid-area: auto;
+        text-align: center;
+        justify-content: initial;
+      }
+      .pricing-card__cta {
+        grid-area: auto;
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .pricing-card--featured {
+    --bg-card: var(--color-surface-accent);
+    color: var(--color-text-inverse);
+
+    .pricing-card__features {
+      --clr-text: inherit;
+    }
+
+    .pricing-card__cta {
+      --bg-cta: var(--color-surface-card);
+    }
+
+    @media (width >= 48rem) {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: -50%;
+        inset-block-start: 50%;
+        translate: 1.5% -50%;
+
+        inline-size: 55rem;
+        block-size: 55rem;
+        background: url("/images/patterns/bg-pricing.svg") center / contain;
+        pointer-events: none;
+      }
+    }
+
+    @media (width >= 70rem) {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .pricing-card__content {
+    text-align: center;
+  }
+
+  .pricing-card__name {
+    margin-block-end: var(--space-200);
+    font-size: var(--font-size-300);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.4;
+  }
+
+  .pricing-card__price {
+    margin-block-end: var(--space-100);
+    font-size: var(--font-size-500);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+  }
+
+  .pricing-card__description {
+    font-size: var(--font-size-100);
+    line-height: 1.6;
+  }
+
+  .pricing-card__features {
+    --stack-space: var(--space-200);
+    --clr-text: var(--color-text-secondary);
+
+    font-size: var(--font-size-100);
+    text-align: center;
+    line-height: 1.6;
+    color: var(--clr-text);
+  }
+
+  .pricing-card__cta {
+    --bg-cta: var(--color-surface-accent-subtle);
+
+    inline-size: max-content;
+    margin-inline: auto;
+    padding-inline: 2.52rem;
+    padding-block: 0.76rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.6;
+    background-color: var(--bg-cta);
+    color: var(--color-text-accent);
+    border-radius: var(--radius-full);
+  }
+</style>
